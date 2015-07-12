@@ -7,7 +7,7 @@ namespace WebApiProxy.Controllers
 	public class ProxyController : ApiController
 	{
 		[HttpGet]
-		[Route("stripe/checkout")]
+		[Route("stripe/checkout.js")]
 		public async Task<HttpResponseMessage> StripeCheckout()
 		{
 			var response = await new HttpClient().GetAsync("https://checkout.stripe.com/checkout.js");
