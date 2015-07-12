@@ -1,0 +1,15 @@
+version: '{build}'
+configuration: Release
+platform: Any CPU
+before_build:
+  - nuget restore
+build:
+  publish_wap: true
+  verbosity: minimal
+deploy:
+- provider: WebDeploy
+  server: https://webapiproxy.scm.azurewebsites.net:443/msdeploy.axd?site=WebApiProxy
+  website: WebApiProxy
+  username: $WebApiProxy
+  password:
+    secure: Be7TtuQVnlEd0fOgXHZ/4/QEwur08NOgxsmEeAsGuY3v4dsz+SEUOgG83tSMFad0Ao+bLeOyTFemkL/X7ly6nQ==
